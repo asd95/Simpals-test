@@ -1,0 +1,27 @@
+.article {
+  margin-bottom: 1rem;
+  padding-bottom: 1.2rem;
+  width: 350px;
+  border-bottom: 1px solid #fff;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-family: "Ubuntu", sans-serif;
+    margin-bottom: 0.4rem;
+  }
+
+  .text {
+    margin-bottom: 0.4rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
