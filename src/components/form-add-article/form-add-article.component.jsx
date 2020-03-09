@@ -13,17 +13,12 @@ export class FormAddArticle extends Component {
     this.state = {
       title: "",
       body: "",
-      tags: []
+      tags: ""
     };
   }
 
   onChange = e => {
-    let { value, name } = e.target;
-    if (name === "tags") {
-      let tags = value.split(",");
-      value = tags;
-    }
-
+    const { value, name } = e.target;
     this.setState({ [name]: value });
   };
 
@@ -32,17 +27,18 @@ export class FormAddArticle extends Component {
     e.preventDefault();
 
     const { title, body, tags } = this.state;
-    if (title === "" || body === "" || tags === []) {
+    if (title === "" || body === "" || tags === "") {
       return;
     }
+    const arrTags = tags.split(",");
 
-    // this.props.addArticle({title, body, tags}); для redux. Мне было удобней отправить объект. Раскомментируйте для работы redux
-    this.props.addArticle(title, body, tags); // закоментируйте для работы с redux
+    // this.props.addArticle({title, body, arrTags}); для redux. Мне было удобней отправить объект. Раскомментируйте для работы redux
+    this.props.addArticle(title, body, arrTags); // закоментируйте для работы с redux
 
     this.setState({
       title: "",
       body: "",
-      tags: []
+      tags: ""
     });
   };
 
